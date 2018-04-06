@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom'; // 'Route' to be added
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { connect } from 'react-redux';
 import * as actions from './actions';
 // import logo from './logo.svg';
@@ -12,6 +12,7 @@ import Feature3 from './components/Feature3';
 import Landing from './components/Landing';
 // import Forms from "./components/Forms";
 // import Arrow from './components/Arrow';
+import Netflix from './components/Display/Item/Netflix'
 
 class App extends Component {
   componentDidMount() {
@@ -21,22 +22,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <BrowserRouter>
+        <Router>
           <div>
             <Nav />
-            <Route exact path="/main" component={Main} />
-            <Route exact path="/landing" component={Landing} />
-          </div>
-        </BrowserRouter>
-        <Main />
+            <Switch>
+              <Route exact path="/" component={Main} />
+              <Route exact path="/netflix" component={Netflix} />
+            </Switch>
 
-        {/* <Arrow></Arrow> */}
-        <Feature1 />
-        {/* <Arrow></Arrow> */}
-        <Feature2 />
-        {/* <Arrow></Arrow> */}
-        <Feature3 />
-        {/* <Forms/> */}
+            <Feature1 />
+
+            <Feature2 />
+
+            <Feature3 />
+          </div>
+        </Router>
       </div>
     );
   }

@@ -1,14 +1,33 @@
 import React, { Component } from 'react';
 import './main.css';
+import { connect } from 'react-redux';
+
+let mapStateToProps = (store) => {
+  return {
+    userInfo: store.user.userInfo
+  }
+}
 
 class Main extends Component {
+
   render() {
     return (
       <div className="main_wrapper">
+
+      {this.props.userInfo.length ===0 ? <div></div> : 
+          <div
+          style={{
+            textAlign: 'center'
+          }}
+        >
+          <h1>Welcome {this.props.userInfo.title}- earBud missed you!</h1>
+          You are now logged in
+      </div>
+    }
         <div className="main_page">
-          <img className="buds" src="https://imgur.com/Nappfnh.gif" />
+          <img className="buds" src="https://imgur.com/UEVECp3.gif" />
           <p className="description">
-            Tune in with EarBuds and go beyond from just listening. Now interact
+            Tune in with EarBuds and go beyond from just listening.Now interact
             with your favorite Podcasts!
           </p>
         </div>
@@ -44,4 +63,5 @@ class Main extends Component {
     );
   }
 }
-export default Main;
+export default connect(mapStateToProps)(Main)
+

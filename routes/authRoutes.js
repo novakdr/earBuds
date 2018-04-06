@@ -12,7 +12,7 @@ module.exports = app => {
     '/auth/google/callback',
     passport.authenticate('google'),
     (req, res) => {
-      res.redirect('/landing'); //INSERT 'NETFLIX' HTML HERE*********
+      res.redirect('/netflix'); //INSERT 'NETFLIX' HTML HERE*********
     }
   );
 

@@ -24,7 +24,7 @@ class Feature2 extends Component {
 
                 <div className="feat2_item3">
 
-                    <section class="mobile-container">
+                    <section class="tab1">
                         <p>Hello World! We are excited to present our work;)
                         Our wish is to get users to have new experience with podcasts.</p>
                             <p><strong>Earbuds</strong> create an atmosphere of connecting and sharing with others

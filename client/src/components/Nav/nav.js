@@ -5,53 +5,95 @@ import { Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-class Nav extends Component {
-  renderContent() {
-    switch (this.props.auth) {
-      case null:
-        return;
-      case false:
-        return (
-          <div>
-            <Button
-              circular
-              inverted
-              color="orange"
-              content="orange"
-              style={{
-                width: '100%',
-                height: '40px'
-              }}
-              href="/auth/google"
-            >
-              Log in with Google!
-            </Button>
-          </div>
-        );
-      default:
-        return (
-          <div>
-            <Button
-              circular
-              inverted
-              color="orange"
-              content="orange"
-              style={{
-                width: '100%',
-                height: '40px'
-              }}
-              href="/api/logout"
-            >
-              Logout
-            </Button>
-          </div>
-        );
-    }
+let mapStateToProps = (store) => {
+  return {
+    userInfo:store.user.userInfo
   }
+}
+
+class Nav extends Component {
+  // renderContent() {
+  //   switch (this.props.userInfo.length === 0) {
+  //     case null:
+  //       return;
+  //     case false:
+  //       return (
+  //         <div className="login_bttn">
+  //           <Button
+  //             circular
+  //             inverted
+  //             color="orange"
+  //             content="orange"
+  //             style={{
+  //               width: '100%',
+  //               height: '40px'
+  //             }}
+  //             href="/auth/google"
+  //           >
+  //             Log in 
+  //           </Button>
+  //         </div>
+  //       );
+  //     default:
+  //       return (
+  //         <div className="logout_bttn">
+  //           <Button
+  //             circular
+  //             inverted
+  //             color="orange"
+  //             content="orange"
+  //             style={{
+  //               width: '100%',
+  //               height: '40px'
+  //             }}
+  //             href="/api/logout"
+  //           >
+  //             Logout
+  //           </Button>
+  //         </div>
+  //       );
+  //   }
+  // }
 
   render() {
     return (
       <div className="nav_wrapper">
+      {/* <button onClick={()=>console.log(this.props.userInfo)}>Check user info </button> */}
+      
+      {this.props.userInfo.length === 0?           
+      <div className="login_bttn">
+      
+      <Button
+        circular
+        inverted
+        color="orange"
+        content="orange"
+        style={{
+          width: '100%',
+          height: '40px'
+        }}
+        href="/auth/google"
+      >
+        Log in 
+      </Button>
+    </div>:
+              <div className="logout_bttn">
+              <Button
+                circular
+                inverted
+                color="orange"
+                content="orange"
+                style={{
+                  width: '100%',
+                  height: '40px'
+                }}
+                href="/api/logout"
+              >
+                Logout
+              </Button>
+            </div>
+    }
+      
         <Link to={this.props.auth ? '/landing' : '/'}>
           <img
             className="nav_logo"
@@ -76,7 +118,7 @@ class Nav extends Component {
               <Icon
                 name="search"
                 size="large"
-                color="orange"
+                color="#ff851b"
                 style={{
                   width: '40px',
                   height: '40px',
@@ -112,15 +154,13 @@ class Nav extends Component {
           >
             Log In<a href="#" />
           </Button> */}
-          <ul className="right">{this.renderContent()}</ul>
+   
         </div>
       </div>
     );
   }
 }
 
-function mapStateToProps({ auth }) {
-  return { auth };
-}
+
 
 export default connect(mapStateToProps)(Nav);

@@ -1,11 +1,18 @@
-import { FETCH_USER } from '../actions/types';
-export default function(state = null, action) {
+
+export default function reducer(state = {
+  userInfo: {}
+}, action) {
   console.log(action);
   switch (action.type) {
-    case FETCH_USER:
-      return action.payload || false;
+    case "FETCH_USER":{
+      return {
+        ...state,
+        userInfo:action.payload
+      }
+    }     
 
-    default:
+    default:{
       return state;
+    }
   }
 }

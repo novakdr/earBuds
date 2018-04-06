@@ -40,7 +40,7 @@ img .description2{
 
 .feat2_item2 h2 {
   position: relative;
-  top:32%;
+  top:36%;
   text-align: center;
   font-family:sans-serif;
   font-weight: 100;
@@ -87,7 +87,7 @@ img .description2{
   } 
 
  /* Third animation */
-  html, button, input, select, textarea {
+  /* html, button, input, select, textarea {
     font-family: courier New;
     color: #92a4ad;
 }
@@ -97,9 +97,9 @@ img .description2{
     font-size: 19px;
     text-align: center;
  
-  }
+  } */
 
-  .mobile-container {
+  .tab1 {
     border-top: 2em solid orange;
     box-shadow: 0 0.1em 1em 0 orange;
     position: relative;
@@ -110,7 +110,7 @@ img .description2{
     background-color: #fff;
     padding: 20px;
   }
-  .mobile-container:before {
+  .tab1:before {
     display: block;
     position: absolute;
     content: '';
@@ -122,7 +122,7 @@ img .description2{
     background-color: #f44;
     box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;
   }
-  .mobile-container:after {
+  .tab1:after {
     display: block;
     position: absolute;
     content: '';
@@ -133,19 +133,19 @@ img .description2{
     border-radius: 2px;
     background-color: white;
   }
-  .mobile-container p {
+  .tab1 p {
     font-family: Courier New;
     color: #333;
     font-size: 16px;
     line-height: 1.5;
   }
   
-  .screen-reader-text {
+  /* .screen-reader-text {
       position: absolute;
       top: -9999em;
       left: -9999em;
   }
- 
+  */
   
   
 

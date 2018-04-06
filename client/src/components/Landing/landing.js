@@ -1,24 +1,33 @@
 // import React, { Component } from 'react';
 import React from 'react';
 // import { setTimeout } from 'timers';
+import { connect } from 'react-redux';
 
+let mapStateToProps = (store) => {
+  return {
+    userInfo: store.user.userInfo
+  }
+}
 // class Landing extends Component {
-const Landing = () => {
+class Landing extends React.Component {
   //   componentDidMount() {
   //       setTimeout()
   //   }
   //   render() {
-  return (
-    <div
-      style={{
-        textAlign: 'center'
-      }}
-    >
-      <h1>Welcome - earBud missed you!</h1>
-      You are now logged in
+  render() {
+    return (
+      <div
+        style={{
+          textAlign: 'center'
+        }}
+      >
+        <h1>Welcome {this.props.userInfo.title}- earBud missed you!</h1>
+        You are now logged in
     </div>
-  );
+    );
+  }
   //   }
 };
 
-export default Landing;
+export default connect(mapStateToProps)(Landing)
+
