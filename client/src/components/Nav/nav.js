@@ -9,7 +9,21 @@ class Nav extends Component {
   renderContent() {
     switch (this.props.auth) {
       case null:
-        return;
+        return (
+          <Button
+            circular
+            inverted
+            color="orange"
+            content="orange"
+            style={{
+              width: '100%',
+              height: '40px'
+            }}
+            loading
+          >
+            Loading
+          </Button>
+        );
       case false:
         return (
           <div>
