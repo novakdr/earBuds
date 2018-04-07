@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './main.css';
 import { connect } from 'react-redux';
+import Feature1 from '../Feature1';
+import Feature2 from '../Feature2';
+import Feature3 from '../Feature3'
 
 let mapStateToProps = (store) => {
   return {
@@ -14,7 +17,7 @@ class Main extends Component {
     return (
       <div className="main_wrapper">
 
-      {this.props.userInfo.length ===0 ? <div></div> : 
+        {/* {this.props.userInfo.length ===0 ? <div></div> : 
           <div
           style={{
             textAlign: 'center'
@@ -23,7 +26,7 @@ class Main extends Component {
           <h1>Welcome {this.props.userInfo.title}- earBud missed you!</h1>
           You are now logged in
       </div>
-    }
+    } */}
         <div className="main_page">
           <img className="buds" src="https://imgur.com/UEVECp3.gif" />
           <p className="description">
@@ -31,6 +34,19 @@ class Main extends Component {
             with your favorite Podcasts!
           </p>
         </div>
+        <div>
+          <Feature1/>
+        </div>
+
+        <div>
+          <Feature2 />
+        </div>
+
+        <div>
+          <Feature3 />
+        </div>
+
+
 
         {/* <section className="color">
 </section>  */}

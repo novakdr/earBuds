@@ -35,7 +35,8 @@ img .description2{
   font-weight: 300;
   font-size: 40px;
   position: relative;
-  top:30%
+  top:30%;
+  color: black;
 }
 
 .feat2_item2 h2 {
@@ -47,6 +48,7 @@ img .description2{
   padding-left: 50px;
   padding-right: 50px;
   font-size: 20px;
+  color: black;
   
 }
 .element {
