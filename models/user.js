@@ -7,7 +7,6 @@ const userSchema = new Schema({
   title: String
 });
 
-
-const User = mongoose.model('users', userSchema);
+const User = mongoose.model('User', userSchema);
  
 module.export = User;

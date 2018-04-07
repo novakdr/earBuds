@@ -13,6 +13,7 @@ import Landing from './components/Landing';
 // import Forms from "./components/Forms";
 // import Arrow from './components/Arrow';
 import Netflix from './components/Display/Item/Netflix'
+import TestingPage from './pages/testing'
 
 class App extends Component {
   componentDidMount() {
@@ -28,7 +29,8 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Main} />
               <Route exact path="/netflix" component={Netflix} />
-            </Switch>
+              <Route exact path="/testing" component={TestingPage} />
+             </Switch>
 
             <Feature1 />
 

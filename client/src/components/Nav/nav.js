@@ -4,6 +4,7 @@ import { Icon } from 'semantic-ui-react';
 import { Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import testingButton from '../testingButton/testingButton'
 
 let mapStateToProps = (store) => {
   return {
@@ -58,6 +59,7 @@ class Nav extends Component {
   render() {
     return (
       <div className="nav_wrapper">
+      <testingButton/>
       {/* <button onClick={()=>console.log(this.props.userInfo)}>Check user info </button> */}
       
       {this.props.userInfo.length === 0?           
