@@ -8,16 +8,16 @@ import testingButton from '../testingButton/testingButton'
 
 let mapStateToProps = (store) => {
   return {
-    userInfo:store.user.userInfo
+    userInfo: store.user.userInfo
   }
 }
 
 class Nav extends Component {
-  
+
   render() {
     return (
       <div className="nav_wrapper">
-              <Link to={this.props.auth ? '/landing' : '/'}>
+        <Link to={this.props.auth ? '/landing' : '/'}>
           <img
             className="nav_logo"
             src="https://imgur.com/EKfm1L9.png"
@@ -26,7 +26,7 @@ class Nav extends Component {
           />
         </Link>
 
-         <div className="nav_link">
+        <div className="nav_link">
           <div className="wrap">
             <form action="" autocomplete="on">
               <input
@@ -52,86 +52,67 @@ class Nav extends Component {
               />
             </form>
 
-            {/* {this.props.userInfo.length === 0?  
-               
-               <div className="login_bttn">
-               
-               <Button
-                 circular
-                 inverted
-                 color="orange"
-                 content="orange"
-                 style={{
-                   width: '100%',
-                   height: '40px'
-                 }}
-                 href="/auth/google"
-               >
-                 Log in 
-               </Button>
-             </div>:
-                       <div className="logout_bttn">
-                       <Button
-                         circular
-                         inverted
-                         color="orange"
-                         content="orange"
-                         style={{
-                           width: '100%',
-                           height: '40px'
-                         }}
-                         href="/api/logout"
-                       >
-                         Logout
-                       </Button>
-                     </div>
-             } */}
 
-            
+
           </div>
 
-            {this.props.userInfo.length === 0?  
-               
-               <div className="login_bttn">
-               
-               <Button
-                 circular
-                 inverted
-                 color="orange"
-                 content="orange"
-                 style={{
-                   width: '100%',
-                   height: '40px'
-                 }}
-                 href="/auth/google"
-               >
-                 Log in 
-               </Button>
-             </div>:
-                       <div className="logout_bttn">
-                       <Button
-                         circular
-                         inverted
-                         color="orange"
-                         content="orange"
-                         style={{
-                           width: '100%',
-                           height: '40px'
-                         }}
-                         href="/api/logout"
-                       >
-                         Logout
-                       </Button>
-                     </div>
-             }
 
-          
-   
+          {this.props.userInfo.length === 0 ?
+
+            <div className="login_bttn">
+
+              <Button
+                circular
+                inverted
+                color="orange"
+                content="orange"
+                style={{
+                  width: '100%',
+                  height: '40px'
+                }}
+                href="/auth/google"
+              >
+                Log in
+               </Button>
+            </div> :
+            <div className="logout_bttn">
+              <Button
+                circular
+                inverted
+                color="orange"
+                content="orange"
+                style={{
+                  width: '100%',
+                  height: '40px'
+                }}
+                href="/api/logout"
+              >
+                Logout
+                       </Button>
+            </div>
+          }
+          <div className="audio_bttn">
+            <Icon
+              name="audio"
+              size="large"
+              color="orange"
+              style={{
+                width: '40px',
+                height: '40px',
+                position: 'absolute',
+                right: '30%',
+                top: '10%'
+              }}
+            />
+
+          </div>
+
+
         </div>
-      {/* <testingButton/> */}
-      {/* <button onClick={()=>console.log(this.props.userInfo)}>Check user info </button> */}
-      
-      {/* {this.props.userInfo.length === 0?  
+        {/* <testingButton/> */}
+        {/* <button onClick={()=>console.log(this.props.userInfo)}>Check user info </button> */}
+
+        {/* {this.props.userInfo.length === 0?  
                
       <div className="login_bttn">
       
@@ -165,10 +146,10 @@ class Nav extends Component {
               </Button>
             </div>
     } */}
-      
-        
-   
-        
+
+
+
+
       </div>
     );
   }

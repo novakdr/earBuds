@@ -32,8 +32,13 @@ footer, header, hgroup, menu, nav, section {
 }
 
 .Netflix_wrapper {
-  background: linear-gradient(-45deg,	#0000CD,  #66CDAA, #23A6D5,#00C78C, #23D5AB);
+  background: linear-gradient(	#de6161, #2657eb,#3fada8, #89fffd);
+
+
 }
+
+
+
 body {
   line-height: 1;
 
@@ -366,7 +371,7 @@ p {
 .Item {
   width: calc(20% - 10px);
   min-width: calc(20% - 10px);
-  background-color: #000000;
+  background-color: rgba(192,192,192,0.3);
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 auto;
       -ms-flex: 1 0 auto;
